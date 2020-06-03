@@ -5,8 +5,8 @@ import requests
 from datetime import datetime
 
 #copied from twilio API 
-account_sid = 'AC635aa60cb04cdfbb77b091d0a99a355e' 
-auth_token = '67299031892f5ade2f76fbf16c5325ec' 
+account_sid = <YOUR_ACCOUNT_SID> #please change it to your own
+auth_token = <YOUR_AUTH_TOKEN> #please change it to your own
 client = Client(account_sid, auth_token) 
  
 def send_message(receiver, message):
@@ -18,7 +18,7 @@ def send_message(receiver, message):
     return message
 
 #receiver number
-receiver_list = ['+6281369718692','+6281221552052']
+receiver_list = ['+6281XXXXXXX','+6281XXXXXXX']
 
 #get content covid report in Indonesia
 url = "https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json"
@@ -47,6 +47,3 @@ for prov in province:
     """
 
     messages = messages + message_partition
-
-# for num in receiver_list:
-#     send_message(num, messages)
